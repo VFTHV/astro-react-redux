@@ -15,7 +15,7 @@ class Zodiac extends React.Component {
   render() {
     return (
       <div
-        className="col-sm-6 col-lg-4 col-xl-3 my-3"
+        className="col-6 col-lg-4 col-xl-3 my-3"
         onClick={this.addSearchTerm}
       >
         <Link to="/day">
@@ -27,7 +27,7 @@ class Zodiac extends React.Component {
           </div>
           <button
             type="button"
-            className="btn btn-outline-success rounded-pill mt-2 w-50"
+            className="btn btn-outline-success rounded-pill mt-2 w-75"
           >
             {this.cappedSign}
           </button>
