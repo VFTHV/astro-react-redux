@@ -14,7 +14,10 @@ class Zodiac extends React.Component {
 
   render() {
     return (
-      <div className="col-4 my-3" onClick={this.addSearchTerm}>
+      <div
+        className="col-sm-6 col-lg-4 col-xl-3 my-3"
+        onClick={this.addSearchTerm}
+      >
         <Link to="/day">
           <div className="row justify-content-center">
             <img
