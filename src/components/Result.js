@@ -49,7 +49,7 @@ class Result extends React.Component {
         {this.renderHoroscope()}
         <div className="col-sm-4">
           <button
-            onClick={() => window.location.reload()}
+            onClick={() => window.location.replace("/")}
             type="button"
             className="btn btn-success m-2 w-100"
           >
