@@ -19,3 +19,16 @@ export const fetchAstro = () => async (dispatch, getState) => {
 
   dispatch({ type: "FETCH_ASTRO", payload: response });
 };
+
+export const signIn = (userId) => {
+  return {
+    type: "SIGN_IN",
+    payload: userId,
+  };
+};
+
+export const signOut = () => {
+  return {
+    type: "SIGN_OUT",
+  };
+};

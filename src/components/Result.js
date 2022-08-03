@@ -14,11 +14,13 @@ class Result extends React.Component {
     if (!this.props.data) {
       return;
     }
+    const zodiac = this.props.apiSearchTerms[0];
+    const cappedSign = zodiac[0].toUpperCase() + zodiac.substring(1);
+
     return (
       <div>
         <h1>
-          {this.props.apiSearchTerms[0]} horoscope for{" "}
-          {this.props.data.current_date}
+          {cappedSign} horoscope for {this.props.data.current_date}
         </h1>
         <p>
           <strong>Your Prediction</strong>: {this.props.data.description}
