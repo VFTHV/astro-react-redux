@@ -27,23 +27,35 @@ class Result extends React.Component {
         </p>
         <p>
           <strong>Your Zodiac Sign Compatibility</strong>:{" "}
-          {this.props.data.compatibility}
+          {this.renderBonusData(this.props.data.compatibility)}
         </p>
         <p>
-          <strong>Your Lucky Color</strong>: {this.props.data.color}
+          <strong>Your Lucky Color</strong>:{" "}
+          {this.renderBonusData(this.props.data.color)}
         </p>
         <p>
-          <strong>Your Lucky Number</strong>: {this.props.data.lucky_number}
+          <strong>Your Lucky Number</strong>:{" "}
+          {this.renderBonusData(this.props.data.lucky_number)}
         </p>
         <p>
-          <strong>Your Lucky Time</strong>: {this.props.data.lucky_time}
+          <strong>Your Lucky Time</strong>:{" "}
+          {this.renderBonusData(this.props.data.lucky_time)}
         </p>
         <p>
-          <strong>Your Mood</strong>: {this.props.data.mood}
+          <strong>Your Mood</strong>:{" "}
+          {this.renderBonusData(this.props.data.mood)}
         </p>
       </div>
     );
   };
+
+  renderBonusData(bonusData) {
+    if (this.props.isSignedIn) {
+      return bonusData;
+    } else {
+      return "Sign in to see details";
+    }
+  }
 
   render() {
     return (
@@ -64,9 +76,11 @@ class Result extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     data: state.data.data,
     apiSearchTerms: state.api,
+    isSignedIn: state.auth.isSignedIn,
   };
 };
 
