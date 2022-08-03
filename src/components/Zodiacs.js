@@ -13,7 +13,7 @@ class Zodiacs extends React.Component {
     return (
       <div className="row text-center">
         <div className="row">
-          <h1>Which is Your Zodiac Sign?</h1>
+          <h1 className="text-light">Which is Your Zodiac Sign?</h1>
         </div>
         {this.renderZodiacs(zodiacList)}
       </div>

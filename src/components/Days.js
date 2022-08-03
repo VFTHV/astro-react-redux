@@ -1,8 +1,7 @@
 import React, { Component } from "react";
+import Day from "./Day";
 import { days } from "./variables";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { addDay } from "../actions";
 
 class Days extends Component {
   componentDidMount() {
@@ -11,22 +10,11 @@ class Days extends Component {
     }
   }
 
-  addSearchTerm = (searchTerm) => {
-    this.props.addDay(searchTerm);
-  };
-
   renderDays(days) {
     return days.map((day) => {
-      const cappedDay = day[0].toUpperCase() + day.substring(1);
       return (
-        <div key={day} className="col-sm-4">
-          <button
-            onClick={() => this.addSearchTerm(day)}
-            type="button"
-            className="btn btn-success m-2 w-100"
-          >
-            {cappedDay}
-          </button>
+        <div key={day} className="col-lg-4">
+          <Day day={day} />
         </div>
       );
     });
@@ -34,22 +22,18 @@ class Days extends Component {
 
   render() {
     return (
-      <div>
-        {console.log(this.props)}
-        <h1 className="text-center">Choose the Day!</h1>
-        <Link to="/result">
-          <div className="row">{this.renderDays(days)}</div>
-        </Link>
+      <div className="row text-center">
+        <h1 className="text-light">Choose the Day!</h1>
+        {this.renderDays(days)}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     apiSearchTerms: state.api,
   };
 };
 
-export default connect(mapStateToProps, { addDay })(Days);
+export default connect(mapStateToProps, null)(Days);

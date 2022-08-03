@@ -18,7 +18,7 @@ class Zodiac extends React.Component {
         className="col-6 col-lg-4 col-xl-3 my-3"
         onClick={this.addSearchTerm}
       >
-        <Link to="/day">
+        <Link className="link-unstyled" to="/day">
           <div className="row justify-content-center">
             <img
               src={require(`../pics/${this.props.zodiac.image}`)}
@@ -27,12 +27,12 @@ class Zodiac extends React.Component {
           </div>
           <button
             type="button"
-            className="btn btn-outline-success rounded-pill mt-2 w-75"
+            className="btn btn-success rounded-pill mt-2 w-75 fs-5"
           >
             {this.cappedSign}
           </button>
-          <p>{this.props.zodiac.dob}</p>
         </Link>
+        <p className="text-light fw-bold">{this.props.zodiac.dob}</p>
       </div>
     );
   }

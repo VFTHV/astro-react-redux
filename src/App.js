@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./styles/styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Zodiacs from "./components/Zodiacs";
 import Days from "./components/Days";
