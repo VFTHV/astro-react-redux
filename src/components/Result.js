@@ -18,7 +18,7 @@ class Result extends React.Component {
     const cappedSign = zodiac[0].toUpperCase() + zodiac.substring(1);
 
     return (
-      <div className="text-danger fs-4">
+      <div className="text-light fs-4">
         <h1>
           {cappedSign} horoscope for {this.props.data.current_date}
         </h1>
