@@ -53,7 +53,7 @@ class Result extends React.Component {
     if (this.props.isSignedIn) {
       return bonusData;
     } else {
-      return "Sign in to see details";
+      return <div className="text-danger fw-bold">Sign in to see details</div>;
     }
   }
 
